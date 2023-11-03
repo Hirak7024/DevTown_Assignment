@@ -13,7 +13,7 @@ const App = () => {
   const [selectedPriceRange, setSelectedPriceRange] = useState(null);
   const [minPrice, setMinPrice] = useState(1000);
   const [maxPrice, setMaxPrice] = useState(30000);
-
+ // i need to make some changes here 
   //For Pagination
   const { pageNumber } = useParams();
   const [posts, setPosts] = useState([]);
