@@ -102,7 +102,7 @@ const SidebarWrapper = styled.div`
     position: absolute;
     top: 0px;
     left: 0px;
-    width: 14vw;
+    width: 15rem;
     height: 100vh;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     /* padding: 20px 15px; */

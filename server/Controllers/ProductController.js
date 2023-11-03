@@ -113,7 +113,7 @@ const getProducts = async (req, res) => {
       if (page > pages) {
         return res.status(404).json({
           status: "fail",
-          message: "No page found",
+          message: "Page not found",
         });
       }
   

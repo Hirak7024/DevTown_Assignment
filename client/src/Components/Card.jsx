@@ -30,27 +30,26 @@ const CardWrapper = styled.div`
       cursor: pointer;
       .productImg_Container{
         width: 100%;
-        /* overflow: hidden; */
-        /* cursor: pointer; */
         .product_img{
           width: 100%;
           height: auto;
-          /* transition-property: all;
-          transition-duration: 0.5s; */
         }
-        /* .product_img:hover{
-          transform: scale(1.1);
-        } */
       }
       .product_title{
         font-size: 23px;
         font-weight: 700;
         margin-top: 15px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
       }
       .product_desc{
         font-size: 14px;
         font-weight: 400;
         margin: 10px 0;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
       }
       .product_price{
         font-size: 18px;

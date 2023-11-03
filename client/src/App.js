@@ -23,6 +23,10 @@ const App = () => {
   const [pages, setPages] = useState(1);
 
   useEffect(() => {
+    setPage(1);
+  }, [selectedCategory, minPrice,maxPrice]);
+
+  useEffect(() => {
     const fetchPosts = async () => {
       setLoading(true);
       try {
@@ -38,7 +42,7 @@ const App = () => {
       }
     }
     fetchPosts();
-  }, [page, minPrice, maxPrice,selectedCategory])
+  }, [page, minPrice, maxPrice, selectedCategory])
 
   console.log(selectedCategory);
   console.log("MinPrice : ", minPrice);
@@ -90,6 +94,8 @@ const AppWrapper = styled.div`
     align-items: center;
     .productCards_Container{
       padding-top: 2rem;
+      height: calc(100vh - 80px);
+      overflow: scroll;
       .paginated_products{
         display: flex;
         flex-direction: column;
@@ -104,6 +110,9 @@ const AppWrapper = styled.div`
         }
       }
     }
+    .productCards_Container::-webkit-scrollbar{
+        width: 0;
+      }
   }
 `
 
