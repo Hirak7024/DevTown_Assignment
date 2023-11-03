@@ -24,7 +24,7 @@ const App = () => {
 
   useEffect(() => {
     setPage(1);
-  }, [selectedCategory, minPrice,maxPrice]);
+  }, [minPrice, maxPrice, selectedCategory]);
 
   useEffect(() => {
     const fetchPosts = async () => {
