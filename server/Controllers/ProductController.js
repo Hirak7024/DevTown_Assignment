@@ -65,73 +65,13 @@ const getProductByCategory = async (req, res) => {
 }
 
 // Pagination
-// const getProducts = async (req, res) => {
-//     try {
-//         let query = ProductModel.find();
-
-//         // Parse the page and limit from the query parameters
-//         const page = parseInt(req.query.page) || 1;
-//         const pageSize = parseInt(req.query.limit) || 3;
-//         const skip = (page - 1) * pageSize;
-
-//         // Check if a category filter is provided in the query
-//         const categoryFilter = req.query.category;
-
-//         // Apply the category filter if provided
-//         if (categoryFilter) {
-//             query = query.where({ Category: categoryFilter });
-//         }
-
-//         // Execute the query to fetch the products
-//         const result = await query.skip(skip).limit(pageSize);
-
-//         // Create a separate query to count the total number of documents
-//         let countQuery = ProductModel.find();
-
-//         // Apply the category filter to the count query if provided
-//         if (categoryFilter) {
-//             countQuery = countQuery.where({ Category: categoryFilter });
-//         }
-
-//         // Execute the count query
-//         //   Mongoose doesn't allow executing countDocuments() after a query has been executed. To fix this error, you should create a separate query for counting documents and another query for fetching the documents. 
-//         const total = await countQuery.countDocuments();
-
-//         // Calculate the total number of pages
-//         const pages = Math.ceil(total / pageSize);
-
-//         // If the requested page is out of range, return a 404 response
-//         if (page > pages) {
-//             return res.status(404).json({
-//                 status: "fail",
-//                 message: "No page found",
-//             });
-//         }
-
-//         // Return the paginated and filtered results
-//         res.status(200).json({
-//             status: "success",
-//             count: result.length,
-//             page,
-//             pages,
-//             data: result,
-//         });
-//     } catch (error) {
-//         console.log(error);
-//         res.status(500).json({
-//             status: "error",
-//             message: "Server Error",
-//         });
-//     }
-// };
-
 const getProducts = async (req, res) => {
     try {
       let query = ProductModel.find();
   
       // Parse the page, limit, minPrice, and maxPrice from the query parameters
       const page = parseInt(req.query.page) || 1;
-      const pageSize = parseInt(req.query.limit) || 3;
+      const pageSize = parseInt(req.query.limit) || 8;
       const skip = (page - 1) * pageSize;
       const minPrice = parseFloat(req.query.minPrice);
       const maxPrice = parseFloat(req.query.maxPrice);
